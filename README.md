@@ -1,69 +1,81 @@
 # 🛡️ Microsoft Malware Prediction – ML Project
 
-## 🧾 Description
+## 📌 Description
 
-This project uses the **Microsoft Malware Prediction** dataset to explore both **supervised** and **unsupervised** machine learning techniques. The dataset contains system-level information about Windows machines, with the objective of predicting whether a system will be infected by malware.
+This project is based on the **Microsoft Malware Prediction** dataset, originally released as part of a Kaggle competition. The checkpoint is designed to practice and apply both **supervised** and **unsupervised machine learning** methods using a simplified version of the dataset.
 
-The checkpoint walks through the entire ML pipeline, including data cleaning, modeling, and evaluation, and serves as a practical application of major machine learning concepts.
+You'll explore Windows OS-based machine data to predict the probability of malware infection and cluster machines based on system features. The aim is to build robust models that could help in identifying vulnerable systems and suggesting preventive actions.
 
 ---
 
-## 🗂️ Dataset Overview
+## 📂 Dataset Overview
 
-- 📌 Source: Simplified version of the original **Kaggle Microsoft Malware Prediction** dataset.
-- 🧠 Each row = one Windows machine.
-- 🎯 Target variable = Whether or not the machine is infected with malware.
+📍 Each row corresponds to a unique machine's purchase history and system state.
 
-![Dataset Sample](https://i.imgur.com/hv2Ynyn.jpg)
+🧪 Dataset Fields (partial list):
+
+| Feature/Variable                | Explanation                                                                                              |
+|-------------------------------|----------------------------------------------------------------------------------------------------------|
+| `Wdft_IsGamer`                | Indicates whether the device is a gamer device or not based on its hardware configuration.               |
+| `Census_IsVirtualDevice`      | Identifies a Virtual Machine (machine learning model).                                                    |
+| `Census_OSEdition`            | Edition of the current OS.                                                                                |
+| `Census_HasOpticalDiskDrive` | True indicates that the machine has an optical disk drive (CD/DVD).                                       |
+| `Firewall`                    | This attribute is true (1) for Windows 8.1 and above if Windows firewall is enabled.                      |
+| `SMode`                       | Set to true when the device is known to be in 'S Mode', e.g. Windows 10 S mode.                           |
+| `IsProtected`                 | Calculated field from SpyNet: TRUE = at least one active and up-to-date antivirus product; FALSE = none. |
+| `OsPlatformSubRelease`        | Returns the OS platform sub-release (Vista, Win7, Win8, etc.).                                           |
+| `CountryIdentifier`           | ID for the country the machine is located in.                                                             |
+
+🖼️ [Dataset Preview](https://i.imgur.com/hv2Ynyn.jpg)
 
 ---
 
 ## 🎯 Objectives
 
-- Build a classification model to predict malware infections.
-- Cluster systems based on feature similarity to discover hidden patterns.
-- Apply essential data preprocessing techniques like handling missing values, encoding, and outlier removal.
+### Part 1: Supervised Learning
+
+- Import the dataset and perform initial data exploration
+- Display general information and generate a **Pandas Profiling Report**
+- Handle missing or corrupted values
+- Remove duplicate rows
+- Detect and treat outliers
+- Encode categorical features
+- Prepare data for modeling
+- Train a **Decision Tree Classifier**
+  - Plot its ROC Curve
+- Tune hyperparameters to improve performance
 
 ---
 
-## 🛠️ Tools & Libraries
+### Part 2: Unsupervised Learning
 
-- Python
-- pandas, numpy
-- sklearn
-- seaborn, matplotlib
-- pandas-profiling
-- plotly (optional for advanced visualizations)
-
----
-
-## 🧪 Project Structure
-
-### 🔹 Part 1: Supervised Learning (Classification)
-
-1. Import & explore the data  
-2. Create a pandas profiling report  
-3. Handle missing values, outliers, duplicates  
-4. Encode categorical variables  
-5. Prepare data for modeling  
-6. Apply **Decision Tree Classifier**  
-7. Evaluate using **ROC curve**  
-8. Tune model hyperparameters  
-
-### 🔹 Part 2: Unsupervised Learning (Clustering)
-
-1. Drop the target variable  
-2. Apply **K-Means Clustering**  
-3. Find the optimal **K** using Elbow Method / Silhouette Score  
-4. Visualize and interpret the clusters  
+- Drop the target variable
+- Apply **K-Means Clustering**
+  - Plot the clusters
+  - Determine optimal **K** value
+- Interpret clustering results
 
 ---
 
-## 📈 Example Outputs
+## 📌 How to Use
 
-- 📊 ROC Curve for Decision Tree performance
-- 🔍 Cluster visualization for unsupervised insights
-- 📋 Data summary reports showing system characteristics
+1. Clone the repository
+2. Install the required libraries (`pandas`, `numpy`, `matplotlib`, `scikit-learn`)
+3. Run each step in a Jupyter notebook or Python script
+4. Analyze the outputs and tune models accordingly
 
 ---
+
+## 📊 Final Goal
+
+Use both supervised and unsupervised methods to:
+- Predict malware infection
+- Understand machine clustering
+- Help security analysts identify vulnerable machine profiles
+
+---
+
+📎 **Note**: This dataset has been modified for educational use. The results are not meant for production deployment but for practice and skill development.
+
+
 

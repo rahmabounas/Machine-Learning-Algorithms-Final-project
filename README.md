@@ -26,7 +26,7 @@ You'll explore Windows OS-based machine data to predict the probability of malwa
 | `OsPlatformSubRelease`        | Returns the OS platform sub-release (Vista, Win7, Win8, etc.).                                           |
 | `CountryIdentifier`           | ID for the country the machine is located in.                                                             |
 
-🖼️ [Dataset Preview](https://i.imgur.com/hv2Ynyn.jpg)
+🖼️ [Dataset Preview](https://drive.google.com/file/d/13hQ-46e6Q7zvLgx8jmQ2R_HwcvKjhpCA/view)
 
 ---
 
